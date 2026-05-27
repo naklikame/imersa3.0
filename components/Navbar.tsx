@@ -1,8 +1,5 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import Image from "next/image";
-
 const navLinks = [
   { label: "Home", href: "#" },
   { label: "O nás", href: "#about" },
@@ -12,19 +9,18 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
-  }, []);
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-5 px-6">
       <nav
-        className="lg-light flex items-center gap-8 px-6 py-3 rounded-full transition-all duration-500"
-        style={{ width: "min(900px, 100%)" }}
+        className="flex items-center gap-8 px-6 py-3 rounded-full"
+        style={{
+          width: "min(900px, 100%)",
+          background: "rgba(20,28,18,0.82)",
+          backdropFilter: "blur(24px) saturate(1.2)",
+          WebkitBackdropFilter: "blur(24px) saturate(1.2)",
+          border: "1px solid rgba(255,255,255,0.06)",
+          boxShadow: "0 8px 32px rgba(0,0,0,0.35)",
+        }}
       >
         {/* Logo */}
         <a href="#" className="flex items-center shrink-0 mr-2">
@@ -41,7 +37,8 @@ export default function Navbar() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors duration-200"
+                className="text-sm font-medium transition-opacity duration-200 hover:opacity-100"
+                style={{ color: "rgba(238,233,228,0.75)" }}
               >
                 {link.label}
               </a>

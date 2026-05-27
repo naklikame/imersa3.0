@@ -5,10 +5,10 @@ export default function Hero() {
     <section className="relative w-full h-screen min-h-[700px] overflow-hidden">
       {/* Background image — dark modern architecture */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-bottom bg-no-repeat"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=2000&q=85')",
+            "url('/renders/bg1.jpeg')",
         }}
       />
 
